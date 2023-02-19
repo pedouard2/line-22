@@ -1,11 +1,17 @@
 from . import db
 
-class Engine(db.Model):
+    # table
+class Word(db.Model):
 
     # Columns
 
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True, unique=True)
 
-    word = db.Column(db.String(45))
+    word = db.Column(db.String(50))
 
-    thrust = db.Column(db.Integer, default=0)
+    phone = db.Column(db.String(50))
+
+    rhyming_part = db.Column(db.String(50))
+
+    def __repr__(self):
+        return f'<word {self.word}>'
