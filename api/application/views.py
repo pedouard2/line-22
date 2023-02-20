@@ -10,21 +10,24 @@ from flask import (
 v1 = Blueprint('api', __name__, url_prefix='/v1')
 
 pattern = re.compile(r"[A-Z]{2}\d\s?")
-seen = [] #TODO cache?
 
 @v1.route('/time')
 def get_current_time():
     return {'time': time.time()}
 
+def get_word_entry(wrd):
+    res = Word.query.filter_by(word=wrd).all()
+    return {
+        "word": wrd,
+        "rhyming_parts": [w.rhyming_part for w in res]
+        }
+
 @v1.route('/words/<word>/rhyming-parts', methods=["GET"])
 def rhyming_part(word):
     #TODO escape chars for sql injection
     if request.method == "GET":
-        if word in seen or Word.query.filter_by(word=word).first():
-            res = Word.query.filter_by(word=word).all()
-            return {
-                word: [w.rhyming_part for w in res]
-            }
+        if Word.query.filter_by(word=word).first():
+            return get_word_entry(word)
         else:
             try:
                 phones = pronouncing.phones_for_word(word)
@@ -34,21 +37,15 @@ def rhyming_part(word):
                     w = Word(
                         word = word,
                         phone = phone,
-                        rhyming_part = rhyming_part_string,
+                        rhyming_part = rhyming_part_string
                     )
                     db.session.add(w)
-                    db.session.commit()
-                seen.append(word)
-                return "Success", 200
-            except:
-                #log word not found in pronouncing library
-                w = Word(
-                    word = word,
-                    phone = None,
-                    rhyming_part = None,
-                )
-                db.session.add(w)
                 db.session.commit()
-                return "Failure", 200
+            except Exception as e:
+                print(e) # log error
+                db.session.rollback()
+                return {}
+            else:
+                return get_word_entry(word)
 
     return {}
