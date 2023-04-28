@@ -23,10 +23,10 @@ const Rhymes = ({ rhymes }) => {
   const wl = rhymes.split(" ");
   const res = getRhymingParts(wl);
 
-  res.then((values) => {
-    // setApiResponse(values)
-    console.log(values)
-  });
+  // res.then((values) => {
+  //   // setApiResponse(values)
+  //   console.log(values)
+  // });
 
   return (
     <div>
