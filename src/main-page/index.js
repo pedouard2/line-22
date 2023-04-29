@@ -4,6 +4,10 @@ import Header from "./header";
 import Rhymes from "../rhyme";
 
 function App() {
+  const defaultTextStates = [
+    "There's vomit on his sweater already, Mom's spaghetti!"
+  ]
+  // const [bodyText, setBodyText] = useState(defaultTextStates[Math.floor(Math.random() * defaultTextStates.length)]);
   const [bodyText, setBodyText] = useState("");
 
   return (
@@ -13,8 +17,10 @@ function App() {
       <div>
         <div>
           <textarea
-          name="bodyText" 
-          onChange={event => setBodyText(event.target.value)}>
+          name="bodyText"
+          // defaultValue={bodyText}
+          onChange={event => setBodyText(event.target.value)}
+          >
           </textarea>
         </div>
 

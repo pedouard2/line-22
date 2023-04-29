@@ -60,9 +60,15 @@ def rhyming_part(word):
                         db.session.add(w)
                 db.session.commit()
             except Exception as e:
-                print(e) # log error
+                # print(e) # log error
                 db.session.rollback()
-                return {}
+                return  {
+                    "word": word,
+                    "rhyming_parts": "",
+                    "syllables": word,
+                    "children" : []
+        }
+
             else:
                 return get_word_entry(word)
 
