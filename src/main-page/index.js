@@ -1,31 +1,28 @@
 import React, { useState, useEffect } from "react";
-import "./main-page.css";
+import "./main-page.scss";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./header";
 import Rhymes from "../rhyme";
 
 function App() {
-  const defaultTextStates = [
-    "There's vomit on his sweater already, Mom's spaghetti!"
-  ]
-  // const [bodyText, setBodyText] = useState(defaultTextStates[Math.floor(Math.random() * defaultTextStates.length)]);
   const [bodyText, setBodyText] = useState("");
 
   return (
-    <div className="container">
-      <Header />
-
-      <div>
-        <div>
+    <div className="container  h-100 d-flex flex-column">
+      <div className="row">
+        <Header />
+      </div>
+      <div className="content row flex-grow-1">
+        <div className="col h-100 form-group green-border-focus">
           <textarea
-          name="bodyText"
-          // defaultValue={bodyText}
-          onChange={event => setBodyText(event.target.value)}
-          >
-          </textarea>
+            name="bodyText"
+            className="form-control"
+            onChange={(event) => setBodyText(event.target.value)}
+          ></textarea>
         </div>
 
-        <div>
-        <Rhymes rhymes={bodyText} />
+        <div className="col">
+          <Rhymes rhymes={bodyText} />
         </div>
       </div>
     </div>
@@ -33,18 +30,3 @@ function App() {
 }
 
 export default App;
-
-{
-  /* <div className="container">
-<textarea
-  name="bodyText"
-  onSubmit={(event) => setBodyText(event.target.value)}
-></textarea>
-<button type="submit">submit</button>
-
-<div className="preview">
-  <h2>Preview: {bodyText}</h2>
-</div>
-{/* <Rhymes rhymes={bodyText} /> */
-}
-// </div> */}
