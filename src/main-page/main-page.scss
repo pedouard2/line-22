@@ -1,0 +1,46 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+// @import "node_modules/mdb-react-ui-kit/scss/bootstrap";
+
+$header-color: #F8FA90;
+$body-bg: #000;
+$body-color: #111;
+$bc:#F8FA90;
+$active-border-color:#8bc34a;
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  background: $bc;
+}
+
+.logo {
+  height: 150px;
+}
+
+.subtitle{
+  font-style: italic;
+  font-size: x-large;
+  color:black;
+}
+
+
+.green-border-focus .form-control:focus {
+  border: 1px solid $active-border-color;
+  box-shadow: 0 0 0 0.2rem rgba(139, 195, 74, .25);
+}
+
+textarea {
+  resize: none;
+  height: 100%;
+}
+
+.content {
+  height: 90vh;
+}
