@@ -21,16 +21,8 @@ const Syllables = ({syllables,children,rhyming_parts}) => {
         }
       }
 
-    function cycleClass(e) {
-        console.log(e.target.id)
-    }
-    function originalBackground(e) {
-        e.target.style.background = 'blue';
-    } 
-    // onMouseLeave={originalBackground}
     return(
-    <span onClick={changeBackground} id={rhyming_parts}   className={`syllable ${arapet} ${stress}`}>{syllables}</span>
-    // onMouseOver={} 
+    <span onClick={changeBackground} className={`syllable ${arapet} ${stress} `}>{syllables}</span>
     )  
     
 } 
@@ -40,7 +32,7 @@ const Words = ({word,rhyming_parts,syllables,children}) => {
 
     if (syllables === undefined) {
         return (
-            <span>{syllables}</span> 
+            <span className="syllable">{syllables}</span> 
         )
     }
 

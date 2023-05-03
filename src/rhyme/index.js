@@ -26,7 +26,7 @@ const Rhymes = ({ rhymes }) => {
       }
       let resp = await Promise.all(promises);
       let res = [];
-      // resp = resp.map((entry) => entry.data);
+
       for (let entry of resp){
         if (typeof entry === 'object' && entry !== null){
           res.push(entry.data)
