@@ -14,15 +14,11 @@ const Syllables = ({syllables,children,rhyming_parts}) => {
       }
 
     function changeBackground(e) {
-        if (e.detail == 2){
-            e.target.style.background = 'red';
-        }else{
-            e.target.style.background = 'white';
-        }
+        e.target.classList.toggle("inactive");
       }
 
     return(
-    <span onClick={changeBackground} className={`syllable ${arapet} ${stress} `}>{syllables}</span>
+    <span onClick={changeBackground} className={`syllable ${arapet} ${stress}`}>{syllables}</span>
     )  
     
 } 
