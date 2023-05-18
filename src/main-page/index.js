@@ -8,7 +8,7 @@ function App() {
   const [bodyText, setBodyText] = useState("");
 
   return (
-    <div className="container  h-100 d-flex flex-column">
+    <div className="container h-100 d-flex flex-column">
       <div className="row">
         <Header />
       </div>

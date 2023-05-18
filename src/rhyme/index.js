@@ -35,7 +35,7 @@ const Rhymes = ({ rhymes }) => {
         } else if (word in localStorage) {
           promises.push(JSON.parse(localStorage.getItem(word)))
         }else {
-          word = word.replace( /[^a-zA-Z ]/g, '');
+          word = word.replace( /[[\-=_!"#%&*{},.\/:;?\(\)\[\]@\\$\^*+<>~`]/g, '');
           const response = await axios.get(
             `http://localhost:5000/v1/words/${word}/rhyming-parts`
           );

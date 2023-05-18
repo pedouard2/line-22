@@ -3,6 +3,7 @@ import re
 import time
 import pyphen
 from .models import *
+from . import app
 
 from flask import (
     Blueprint, request, request
@@ -13,6 +14,10 @@ v1 = Blueprint('api', __name__, url_prefix='/v1')
 pattern = re.compile(r"[A-Z]{2}\d\s?")
 
 dic = pyphen.Pyphen(lang='en_US')
+
+@app.route('/')
+def index():
+    return app.send_static('index.html')
 
 @v1.route('/time')
 def get_current_time():
@@ -55,8 +60,6 @@ def rhyming_part(word):
         #TODO pattern match for space -> return space
         if Word.query.filter_by(word=word).first():
             return get_word_entry(word)
-        # elif query and query == "all":
-        #     return get_word_entry("*")
         else:
             try:
                 phones = pronouncing.phones_for_word(word)
@@ -71,6 +74,15 @@ def rhyming_part(word):
                             phone = phone,
                             rhyming_part = rhyming_part_string.strip(),
                             syllable = syllables
+                        )
+                        db.session.add(w)
+                    else:
+                        rhyming_part_string = "".join(stresses)
+                        w = Word(
+                            word = word,
+                            phone = phone,
+                            rhyming_part = rhyming_part_string.strip(),
+                            syllable = word
                         )
                         db.session.add(w)
                 db.session.commit()
