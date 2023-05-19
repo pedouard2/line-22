@@ -11,7 +11,7 @@ const Rhymes = ({ rhymes }) => {
   useEffect(() => {
     const fetchDictionary = async () => {
       const rsp = await axios.get(
-        "http://localhost:5000/v1/words/*/rhyming-parts"
+        "/v1/words/*/rhyming-parts"
       );
       const words = rsp.data;
       for (let word of words) {
@@ -37,7 +37,7 @@ const Rhymes = ({ rhymes }) => {
         }else {
           word = word.replace( /[[\-=_!"#%&*{},.\/:;?\(\)\[\]@\\$\^*+<>~`]/g, '');
           const response = await axios.get(
-            `http://localhost:5000/v1/words/${word}/rhyming-parts`
+            `/v1/words/${word}/rhyming-parts`
           );
           promises.push(response);
         }
