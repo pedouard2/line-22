@@ -3,7 +3,7 @@ import re
 import time
 import pyphen
 from .models import *
-from . import app
+# from . import app
 
 from flask import (
     Blueprint, request, request
@@ -15,9 +15,9 @@ pattern = re.compile(r"[A-Z]{2}\d\s?")
 
 dic = pyphen.Pyphen(lang='en_US')
 
-@app.route('/')
-def index():
-    return app.send_static('index.html')
+# @app.route('/')
+# def index():
+#     return app.send_static('index.html')
 
 @v1.route('/time')
 def get_current_time():
