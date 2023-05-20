@@ -5,5 +5,4 @@ jobs:
   clone-latest:
     runs-on: self-hosted
     steps:
-      - run: cd /home/ubuntu/line-22
-      - run: git pull 
+      - run: cd /home/ubuntu/line-22 && git pull
