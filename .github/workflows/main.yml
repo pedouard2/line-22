@@ -1,9 +1,9 @@
-name: learn-github-actions
+name: Deploy to production
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
-  hello-world:
+  clone-latest:
     runs-on: self-hosted
     steps:
-      - run: echo "hello world"
-      - run: echo "goodbye"
+      - run: cd /home/ubuntu/line-22
+      - run: git pull 
