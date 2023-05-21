@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: sudo cp -r ../line-22 ~
-      - run: cp ~/line-22 && sudo npm run build
+      - run: cd ~/line-22 && sudo npm run build
   restart-services:
     runs-on: self-hosted
     steps:
