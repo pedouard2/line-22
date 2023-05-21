@@ -7,3 +7,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: sudo cp -r ../line-22 ~/line-22
+      - run: echo thanks
