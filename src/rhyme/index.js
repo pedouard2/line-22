@@ -3,42 +3,48 @@ import axios from "axios";
 import Words from "./word";
 import "./rhyme.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { filter } from "../dictionary/bloomFilter";
+
 
 const Rhymes = ({ rhymes }) => {
   const [items, setItems] = useState([]);
-  const [dictionary, setDictionary] = useState([]);
 
   useEffect(() => {
     const fetchDictionary = async () => {
-      const rsp = await axios.get(
-        "/v1/words/*/rhyming-parts"
-      );
+      const rsp = await axios.get("/v1/words/*/rhyming-parts");
       const words = rsp.data;
       for (let word of words) {
         localStorage.setItem(word.word, JSON.stringify(word));
       }
     };
     fetchDictionary();
-  },[localStorage])
+  }, [localStorage]);
 
   useEffect(() => {
-  
-
     const getRhymingParts = async (wordList) => {
       let promises = [];
       for (let word of wordList) {
         word = word.toLowerCase();
         if (!word) {
-        } 
-        else if (!word.match(/^[0-9a-z]+/)) {
+          // empty
+        } else if (!word.match(/^[a-z]+/)) {
+          // does not start with a-z character
           promises.push(word);
-        } else if (word in localStorage) {
-          promises.push(JSON.parse(localStorage.getItem(word)))
-        }else {
-          word = word.replace( /[[\-=_!"#%&*{},.\/:;?\(\)\[\]@\\$\^*+<>~`]/g, '');
-          const response = await axios.get(
-            `/v1/words/${word}/rhyming-parts`
+        } 
+        else if (word in localStorage) {
+          promises.push(JSON.parse(localStorage.getItem(word)));
+        }
+         else {
+          word = word.replace(
+            /[[\-=_!"#%&*{},.\/:;?\(\)\[\]@\\$\^*+<>~`]/g,
+            ""
           );
+          let response;
+          if (filter.has(word) === true) {
+            response = await axios.get(`/v1/words/${word}/rhyming-parts`);
+          } else {
+            response = word;
+          }
           promises.push(response);
         }
       }
@@ -48,8 +54,7 @@ const Rhymes = ({ rhymes }) => {
       for (let entry of resp) {
         if (typeof entry === "object" && entry !== null && "data" in entry) {
           res.push(entry.data);
-        }
-        else {
+        } else {
           res.push(entry);
         }
       }
@@ -60,6 +65,7 @@ const Rhymes = ({ rhymes }) => {
 
   let v = [];
   let i = 0;
+
   for (let item of items) {
     if (typeof item === "object" && item !== null) {
       v.push(
@@ -72,7 +78,7 @@ const Rhymes = ({ rhymes }) => {
         />
       );
     } else {
-      v.push(<span  key={i}>{item}</span>);
+      v.push(<span key={i}>{item}</span>);
     }
     i++;
   }
