@@ -18,46 +18,166 @@ span {
 
 
 
-.AA {background-color: rgb(random(255),random(255),random(255));}	
-.AE	{ background-color: rgb(random(255),random(255),random(255));}
-.AH	{ background-color: rgb(random(255),random(255),random(255));}
-.AO	{ background-color: rgb(random(255),random(255),random(255));}
-.AW	{ background-color: rgb(random(255),random(255),random(255));}
-.AY	{ background-color: rgb(random(255),random(255),random(255));}
-.B 	{ background-color: rgb(random(255),random(255),random(255));}
-.CH	{ background-color: rgb(random(255),random(255),random(255));}
-.D 	{ background-color: rgb(random(255),random(255),random(255));}
-.DH	{ background-color: rgb(random(255),random(255),random(255));}
-.EH	{ background-color: rgb(random(255),random(255),random(255));}
-.ER	{ background-color: rgb(random(255),random(255),random(255));}
-.EY	{ background-color: rgb(random(255),random(255),random(255));}
-.F 	{ background-color: rgb(random(255),random(255),random(255));}
-.G 	{ background-color: rgb(random(255),random(255),random(255));}
-.HH	{ background-color: rgb(random(255),random(255),random(255));}
-.IH	{ background-color: rgb(random(255),random(255),random(255));}
-.IY	{ background-color: rgb(random(255),random(255),random(255));}
-.JH	{ background-color: rgb(random(255),random(255),random(255));}
-.K { background-color: rgb(random(255),random(255),random(255));}
-.L 	{ background-color: rgb(random(255),random(255),random(255));}
-.M { background-color: rgb(random(255),random(255),random(255));}
-.N { background-color: rgb(random(255),random(255),random(255));}
-.NG { background-color: rgb(random(255),random(255),random(255));}	
-.OW	{ background-color: rgb(random(255),random(255),random(255));}
-.OY	{ background-color: rgb(random(255),random(255),random(255));}
-.P 	{ background-color: rgb(random(255),random(255),random(255));}
-.R 	{ background-color: rgb(random(255),random(255),random(255));}
-.S 	{ background-color: rgb(random(255),random(255),random(255));}
-.SH	{ background-color: rgb(random(255),random(255),random(255));}
-.T 	{ background-color: rgb(random(255),random(255),random(255));}
-.TH	{ background-color: rgb(random(255),random(255),random(255));}
-.UH	{ background-color: rgb(random(255),random(255),random(255));}
-.UW { background-color: rgb(random(255),random(255),random(255));}
-.V 	{ background-color: rgb(random(255),random(255),random(255));}
-.W 	{ background-color: rgb(random(255),random(255),random(255));}
-.Y 	{ background-color: rgb(random(255),random(255),random(255));}
-.Z 	{ background-color: rgb(random(255),random(255),random(255));}
-.ZH	{ background-color: rgb(random(255),random(255),random(255));}
+// .AA {background-color: rgb(random(255),random(255),random(255));}	
+// .AE	{ background-color: rgb(random(255),random(255),random(255));}
+// .AH	{ background-color: rgb(random(255),random(255),random(255));}
+// .AO	{ background-color: rgb(random(255),random(255),random(255));}
+// .AW	{ background-color: rgb(random(255),random(255),random(255));}
+// .AY	{ background-color: rgb(random(255),random(255),random(255));}
+// .B 	{ background-color: rgb(random(255),random(255),random(255));}
+// .CH	{ background-color: rgb(random(255),random(255),random(255));}
+// .D 	{ background-color: rgb(random(255),random(255),random(255));}
+// .DH	{ background-color: rgb(random(255),random(255),random(255));}
+// .EH	{ background-color: rgb(random(255),random(255),random(255));}
+// .ER	{ background-color: rgb(random(255),random(255),random(255));}
+// .EY	{ background-color: rgb(random(255),random(255),random(255));}
+// .F 	{ background-color: rgb(random(255),random(255),random(255));}
+// .G 	{ background-color: rgb(random(255),random(255),random(255));}
+// .HH	{ background-color: rgb(random(255),random(255),random(255));}
+// .IH	{ background-color: rgb(random(255),random(255),random(255));}
+// .IY	{ background-color: rgb(random(255),random(255),random(255));}
+// .JH	{ background-color: rgb(random(255),random(255),random(255));}
+// .K { background-color: rgb(random(255),random(255),random(255));}
+// .L 	{ background-color: rgb(random(255),random(255),random(255));}
+// .M { background-color: rgb(random(255),random(255),random(255));}
+// .N { background-color: rgb(random(255),random(255),random(255));}
+// .NG { background-color: rgb(random(255),random(255),random(255));}	
+// .OW	{ background-color: rgb(random(255),random(255),random(255));}
+// .OY	{ background-color: rgb(random(255),random(255),random(255));}
+// .P 	{ background-color: rgb(random(255),random(255),random(255));}
+// .R 	{ background-color: rgb(random(255),random(255),random(255));}
+// .S 	{ background-color: rgb(random(255),random(255),random(255));}
+// .SH	{ background-color: rgb(random(255),random(255),random(255));}
+// .T 	{ background-color: rgb(random(255),random(255),random(255));}
+// .TH	{ background-color: rgb(random(255),random(255),random(255));}
+// .UH	{ background-color: rgb(random(255),random(255),random(255));}
+// .UW { background-color: rgb(random(255),random(255),random(255));}
+// .V 	{ background-color: rgb(random(255),random(255),random(255));}
+// .W 	{ background-color: rgb(random(255),random(255),random(255));}
+// .Y 	{ background-color: rgb(random(255),random(255),random(255));}
+// .Z 	{ background-color: rgb(random(255),random(255),random(255));}
+// .ZH	{ background-color: rgb(random(255),random(255),random(255));}
 
 .inactive {
     background-color: white;
 }
+
+
+
+.AA {
+    background-color:#8a92bf
+   }
+   .AE {
+    background-color:#3df645
+   }
+   .AH {
+    background-color:#1d9df6
+   }
+   .AO {
+    background-color:#7ce9aa
+   }
+   .AW {
+    background-color:#5692c2
+   }
+   .AY {
+    background-color:#ca8c2e
+   }
+   .B {
+    background-color:#a634b9
+   }
+   .CH {
+    background-color:#59c951
+   }
+   .D {
+    background-color:#1dd286
+   }
+   .DH {
+    background-color:#e3b7bb
+   }
+   .EH {
+    background-color:#68f988
+   }
+   .ER {
+    background-color:#f6354b
+   }
+   .EY {
+    background-color:#a764fa
+   }
+   .F {
+    background-color:#458f28
+   }
+   .G {
+    background-color:#36de29
+   }
+   .HH {
+    background-color:#1daf79
+   }
+   .IH {
+    background-color:#23a05c
+   }
+   .IY {
+    background-color:#e00e35
+   }
+   .JH {
+    background-color:#c23b63
+   }
+   .K {
+    background-color:#fcc128
+   }
+   .L {
+    background-color:#f8cfb6
+   }
+   .M {
+    background-color:#9f12f9
+   }
+   .N {
+    background-color:#eb268e
+   }
+   .NG {
+    background-color:#7ea570
+   }
+   .OW {
+    background-color:#63595e
+   }
+   .OY {
+    background-color:#771fe8
+   }
+   .P {
+    background-color:#910aef
+   }
+   .R {
+    background-color:#1e992c
+   }
+   .S {
+    background-color:#d72820
+   }
+   .SH {
+    background-color:#ce256c
+   }
+   .T {
+    background-color:#f01f33
+   }
+   .TH {
+    background-color:#f1d70f
+   }
+   .UH {
+    background-color:#0144ae
+   }
+   .UW {
+    background-color:#5eed74
+   }
+   .V {
+    background-color:#174941
+   }
+   .W {
+    background-color:#ebe49d
+   }
+   .Y {
+    background-color:#224601
+   }
+   .Z {
+    background-color:#b8aa0e
+   }
+   .ZH {
+    background-color:#234f29
+   }
