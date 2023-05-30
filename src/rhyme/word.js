@@ -35,11 +35,6 @@ const Words = ({word,rhyming_parts,syllables,children}) => {
     let hyphenation = syllables.split("-")
     let rp = rhyming_parts.split(" ")
     let itemList = hyphenation.map((item,i) =>  <Syllables key={i} syllables={item} rhyming_parts={rp[i]} />)
-    // return (
-        
-    //     <span onMouseOver={changeBackground} onMouseLeave={originalBackground}>{syllables}</span> 
-    //     // className={`syllable c${classColor}`}  style={{"background": syllables.color }}
-    //   );
 
     return (
         <span>{itemList} </span> 
