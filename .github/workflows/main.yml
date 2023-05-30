@@ -1,0 +1,14 @@
+name: Deploy to production
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
+jobs:
+  clone-latest:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+      - run: sudo cp -r ../line-22 ~
+      - run: cd ~/line-22 && sudo npm run build
+  restart-services:
+    runs-on: self-hosted
+    steps:
+      - run: pwd
