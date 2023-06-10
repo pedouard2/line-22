@@ -1,3 +1,4 @@
+// https://stackoverflow.com/questions/68707553/uncaught-referenceerror-buffer-is-not-defined
 const webpack = require("webpack")
 
 module.exports = function override(config, env) {
